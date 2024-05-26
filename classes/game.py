@@ -1,27 +1,11 @@
-import random
+from classes.game import Person, bcolors
 
-class bcolors:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
+magic = [{"name": "Fire", "cost": 10, "dmg": 60}, # list of dictionaries
+         {"name": "Thunder", "cost": 10, "dmg": 60},
+         {"name": "fire", "cost": 10, "dmg": 60}] 
 
-class Person:
-    def __init__(self, hp, mp, atk, df, magic):
-        self.maxhp = hp
-        self.hp = hp
-        self.maxmp = mp
-        self.mp = mp
-        self.atkl = atk - 10
-        self.atkh = atk + 10
-        self.df = df
-        self.magic = magic
-        self.actions = ["Attack", "Magic"]
+player = Person(460, 65, 60, 34, magic) # player stats
 
-    def generate_damage(self, i):
-        return random.randrange(self.atkl, self.atkh)
-    
+print(player.generate_damage(0)) # random damage
+print(player.generate_damage(0))
+print(player.generate_damage(0))
