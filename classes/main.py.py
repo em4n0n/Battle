@@ -22,6 +22,10 @@ class Person:
         self.magic = magic
         self.actions = ["Attack", "Magic"]
 
-    def generate_damage(self, i):
+    def generate_damage(self):
         return random.randrange(self.atkl, self.atkh)
     
+    def generate_spell(self, i):
+        mgl = self.magic[i]["dmg"] -5
+        mgh = self.magic[i]["dmg"] + 5
+        return random.randrange(mgl, mgh)
