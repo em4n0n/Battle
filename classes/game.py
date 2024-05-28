@@ -1,11 +1,37 @@
-from classes.game import Person, bcolors
+import random
 
-magic = [{"name": "Fire", "cost": 10, "dmg": 60}, # list of dictionaries
-         {"name": "Thunder", "cost": 10, "dmg": 60},
-         {"name": "fire", "cost": 10, "dmg": 60}] 
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
 
-player = Person(460, 65, 60, 34, magic) # player stats
+class Person:
+    def __init__(self, hp, mp, atk, df, magic):
+        self.maxhp = hp
+        self.hp = hp
+        self.maxmp = mp
+        self.mp = mp
+        self.atkl = atk - 10
+        self.atkh = atk + 10
+        self.df = df
+        self.magic = magic
+        self.actions = ["Attack", "Magic"]
 
-print(player.generate_damage(0)) # random damage
-print(player.generate_damage(0))
-print(player.generate_damage(0))
+    def generate_damage(self):
+        return random.randrange(self.atkl, self.atkh)
+    
+    def generate_spell_damage(self, i):
+        mgl = self.magic[i]["dmg"] - 5
+        mgh = self.magic[i]["dmg"] + 5
+        return random.randrange(mgl, mgh)
+    
+    def take_damage(self, dmg): # player damage
+        self.hp -= dmg # take away damage from hp
+        if self.hp < 0: 
+            self.hp = 0
+        return self.hp # if hp is less than 0, return hp
