@@ -50,3 +50,9 @@ class Person:
     
     def reduce_mp(self, cost): #reduces our mp
         self.mp -= cost
+
+    def get_spell_name(self, i): #return the name of spell
+        return self.magic[i]["name"]
+    
+    def get_spell_mp_cost(self, i):
+        return self.magic[i]["cost"]
