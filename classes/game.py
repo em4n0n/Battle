@@ -35,3 +35,18 @@ class Person:
         if self.hp < 0: 
             self.hp = 0
         return self.hp # if hp is less than 0, return hp
+
+    def get_hp(self):
+        return self.hp
+    
+    def get_max_hp(self):
+        return self.maxhp
+    
+    def get_mp(self):
+        return self.mp
+    
+    def get_max_mp(self):
+        return self.get_max_mp
+    
+    def reduce_mp(self, cost): #reduces our mp
+        self.mp -= cost
