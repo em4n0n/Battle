@@ -35,6 +35,12 @@ class Person:
         if self.hp < 0: 
             self.hp = 0
         return self.hp # if hp is less than 0, return hp
+    
+    def heal(self, dmg):
+        self.hp -= dmg
+        if self.hp < 0:
+            self.hp = 0
+        return self.hp
 
     def get_hp(self):
         return self.hp
@@ -62,11 +68,11 @@ class Person:
         print("Actions")
         for item in self.actions:
             print(str(i) + ":", item) # concat with colon
-            i += i # increment i
+            i += 1 # increment i
     
     def choose_magic(self):
         i = 1
-        print("Magic")
+        print(bcolors.OKBLUE + bcolors.BOLD, + "Magic:" + bcolors.ENDC)
         for spell in self.magic:
-            print(str(i) + ":", spell["name"], "(cost:", str(spell["mp"]) + ")")
+            print(str(i) + ":", spell["name"], "(cost:", str(spell.cost) + ")")
             i += 1
