@@ -13,12 +13,18 @@ i = 0
 print(bcolors.FAIL + bcolors.BOLD + "AN ENEMY ATTACKS!" + bcolors.ENDC)
 
 while running:
-    print("==============")
+    print("======================")
     player.choose_action()
     choice = input("Choose action:")
     index = int(choice) - 1 # reduce the choice by 1 since index starts at 0
     
     if index == 0:
-        dmg = player.generate_damag1e()
-        enemy.take_damage(dmg)
+        dmg = player.generate_damage() # randrange of atkl + atkh
+        enemy.take_damage(dmg) 
         print("You attacked for", dmg, "points of damage. Enemy HP:", enemy.get_hp())
+
+    enemy_choice = 1
+
+    enemy_dmg = enemy.generate_damage()
+    player.take_damage(enemy_dmg)
+    print("Enemy attacks for", enemy_dmg, "Player HP", player.get_hp())
