@@ -28,3 +28,10 @@ while running:
     enemy_dmg = enemy.generate_damage()
     player.take_damage(enemy_dmg)
     print("Enemy attacks for", enemy_dmg, "Player HP", player.get_hp())
+
+    if enemy.get_hp() == 0:
+        print(bcolors.OKGREEN + "You Win!" + bcolors.ENDC)
+        running = False
+    elif player.get_hp() == 0:
+        print(bcolors.FAIL + "Your enemy has defeated you!" + bcolors.ENDC)
+        running = False
