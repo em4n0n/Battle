@@ -21,7 +21,7 @@ while running:
     if index == 0:
         dmg = player.generate_damage() # randrange of atkl + atkh
         enemy.take_damage(dmg) # take damage method
-        print("You attacked for", dmg, "points of damage. Enemy HP:", enemy.get_hp())
+        print("You attacked for", dmg, "points of damage.")
     elif index == 1:
         player.choose_magic()
         magic_choice = int(input("Choose magic:")) - 1 # wrap input in int
@@ -38,7 +38,7 @@ while running:
         player.reduce_mp(cost) # reduce mp by cost
         enemy.take_damage(magic_dmg) # enemy takes magic damage
         print(bcolors.OKBLUE + "\n" + spell + " deals", str(magic_dmg), "points of damage" + bcolors.ENDC)
-        
+
 
         
 
@@ -47,7 +47,7 @@ while running:
 
     enemy_dmg = enemy.generate_damage()
     player.take_damage(enemy_dmg)
-    print("Enemy attacks for", enemy_dmg, "Player HP", player.get_hp())
+    print("Enemy attacks for", enemy_dmg)
 
     if enemy.get_hp() == 0:
         print(bcolors.OKGREEN + "You Win!" + bcolors.ENDC)
