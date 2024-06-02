@@ -22,7 +22,11 @@ while running:
         dmg = player.generate_damage() # randrange of atkl + atkh
         enemy.take_damage(dmg) # take damage method
         print("You attacked for", dmg, "points of damage. Enemy HP:", enemy.get_hp())
-
+    elif index == 1:
+        player.choose_magic()
+        magic_choice = int(input("Choose magic:")) - 1 # wrap input in int
+        magic_dmg = player.generate_spell_damage(magic_choice)
+        
     enemy_choice = 1 # only attack
 
     enemy_dmg = enemy.generate_damage()
