@@ -37,6 +37,9 @@ while running:
 
         player.reduce_mp(cost) # reduce mp by cost
         enemy.take_damage(magic_dmg) # enemy takes magic damage
+        print(bcolors.OKBLUE + "\n" + spell + " deals", str(magic_dmg), "points of damage" + bcolors.ENDC)
+        
+
         
 
 
