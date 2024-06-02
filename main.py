@@ -36,6 +36,8 @@ while running:
             continue
 
         player.reduce_mp(cost) # reduce mp by cost
+        enemy.take_damage(magic_dmg) # enemy takes magic damage
+        
 
 
     enemy_choice = 1 # only attack
