@@ -37,7 +37,7 @@ class Person:
         return self.hp # if hp is less than 0, return hp
     
     def heal(self, dmg):
-        self.hp -= dmg
+        self.hp += dmg
         if self.hp < 0:
             self.hp = 0
         return self.hp
@@ -52,7 +52,7 @@ class Person:
         return self.mp
     
     def get_max_mp(self):
-        return self.get_max_mp
+        return self.maxmp
     
     def reduce_mp(self, cost): #reduces our mp
         self.mp -= cost
@@ -65,7 +65,7 @@ class Person:
 
     def choose_action(self):
         i = 1 # start index with 1
-        print("Actions")
+        print(bcolors.OKBLUE + bcolors.BOLD + "Actions" + bcolors.ENDC)
         for item in self.actions:
             print(str(i) + ":", item) # concat with colon
             i += 1 # increment i
