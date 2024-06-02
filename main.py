@@ -14,16 +14,16 @@ print(bcolors.FAIL + bcolors.BOLD + "AN ENEMY ATTACKS!" + bcolors.ENDC)
 
 while running:
     print("======================")
-    player.choose_action()
+    player.choose_action() # call the method
     choice = input("Choose action:")
     index = int(choice) - 1 # reduce the choice by 1 since index starts at 0
     
     if index == 0:
         dmg = player.generate_damage() # randrange of atkl + atkh
-        enemy.take_damage(dmg) 
+        enemy.take_damage(dmg) # take damage method
         print("You attacked for", dmg, "points of damage. Enemy HP:", enemy.get_hp())
 
-    enemy_choice = 1
+    enemy_choice = 1 # only attack
 
     enemy_dmg = enemy.generate_damage()
     player.take_damage(enemy_dmg)
