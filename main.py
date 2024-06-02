@@ -49,6 +49,8 @@ while running:
     player.take_damage(enemy_dmg)
     print("Enemy attacks for", enemy_dmg)
 
+    print("===================")
+    print("Enemy HP:", bcolors.FAIL + str(enemy.get_hp) + "/" + str(enemy.get_max_hp()))
     if enemy.get_hp() == 0:
         print(bcolors.OKGREEN + "You Win!" + bcolors.ENDC)
         running = False
