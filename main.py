@@ -29,6 +29,15 @@ while running:
         spell = player.get_spell_name(magic_choice)
         cost = player.get_spell_mp_cost(magic_choice) # reduce magic points by the cost of the spell
     
+        current_mp = player.get_mp() # get mp
+
+        if cost > current_mp:
+            print(bcolors.FAIL + "\Not enough MP\n" + bcolors.ENDC)
+            continue
+
+        player.reduce_mp(cost) # reduce mp by cost
+
+
     enemy_choice = 1 # only attack
 
     enemy_dmg = enemy.generate_damage()
