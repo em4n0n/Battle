@@ -1,4 +1,16 @@
 from classes.game import Person, bcolors
+from classes.magic import Spell
+
+# Create Black Magic
+fire = Spell("Fire", 10, 100, "black")
+thunder = Spell("Thunder", 10, 100, "black")
+blizzard = Spell("Blizzard", 10, 100, "black")
+meteor = Spell("Meteor", 20, 200, "black")
+quake = Spell("Quake", 14, 140, "black")
+
+# Create White Magic
+cure = Spell("Cure", 12, 120, "white")
+cura = Spell("Cura", 18, 200)
 
 magic = [{"name": "Fire", "cost": 10, "dmg": 100},
          {"name": "Thunder", "cost": 12, "dmg": 124},
