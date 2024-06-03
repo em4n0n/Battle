@@ -9,11 +9,14 @@ meteor = Spell("Meteor", 20, 200, "black")
 quake = Spell("Quake", 14, 140, "black")
 
 # Create White Magic
+player = Person(460, 65, 60, 34)
 cure = Spell("Cure", 12, 120, "white")
 cura = Spell("Cura", 18, 200)
 
-player = Person(460, 65, 60, 34, magic) # instantiate player
-enemy = Person(1200, 65, 45, 25, magic) # instantiate (creating object from a blueprint(enemy 
+# Instantiate People
+
+player = Person(460, 65, 60, 34, [fire, thunder, blizzard, meteor, cure, cura]) # instantiate player
+enemy = Person(1200, 65, 45, 25, [fire, thunder, blizzard, meteor, cure, cura]) # instantiate (creating object from a blueprint(enemy 
 
 running = True # run the loop
 i = 0
