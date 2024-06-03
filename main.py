@@ -45,7 +45,7 @@ while running:
     player.take_damage(enemy_dmg)
     print("Enemy attacks for", enemy_dmg)
 
-    print("===================")
+    print("==========================")
     print("Enemy HP:", bcolors.FAIL + str(enemy.get_hp()) + "/" + str(enemy.get_max_hp()) + bcolors.ENDC + "\n")
 
     print("Your HP:", bcolors.OKGREEN + str(player.get_hp()) + "/" + str(player.get_max_hp()) + bcolors.ENDC)

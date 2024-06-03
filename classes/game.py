@@ -72,7 +72,7 @@ class Person:
     
     def choose_magic(self):
         i = 1
-        print(bcolors.OKBLUE + bcolors.BOLD, + "Magic:" + bcolors.ENDC)
+        print(bcolors.OKBLUE + bcolors.BOLD + "Magic:" + bcolors.ENDC)
         for spell in self.magic:
-            print(str(i) + ":", spell["name"], "(cost:", str(spell.cost) + ")")
+            print(str(i) + ":", spell["name"], "(cost:", str(spell["cost"]) + ")")
             i += 1
