@@ -25,11 +25,6 @@ class Person:
     def generate_damage(self):
         return random.randrange(self.atkl, self.atkh)
     
-    def generate_spell_damage(self, i):
-        mgl = self.magic[i]["dmg"] - 5
-        mgh = self.magic[i]["dmg"] + 5
-        return random.randrange(mgl, mgh)
-    
     def take_damage(self, dmg): # player damage
         self.hp -= dmg # take away damage from hp
         if self.hp < 0: 
