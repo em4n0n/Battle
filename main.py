@@ -36,15 +36,11 @@ while running:
     elif index == 1:
         player.choose_magic()
         magic_choice = int(input("Choose magic:")) - 1 # wrap input in int
-        
-        magic_dmg = player.generate_spell_damage(magic_choice)
-        spell = player.get_spell_name(magic_choice)
-        cost = player.get_spell_mp_cost(magic_choice) # reduce magic points by the cost of the spell
 
+        cost = player.get_spell_mp_cost(magic_choice)
         spell = player.magic[magic_choice]
         magic_dmg = spell.generate_damage()
         
-
 
         current_mp = player.get_mp() # get mp
 
