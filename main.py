@@ -9,9 +9,8 @@ meteor = Spell("Meteor", 20, 200, "black")
 quake = Spell("Quake", 14, 140, "black")
 
 # Create White Magic
-player = Person(460, 65, 60, 34)
 cure = Spell("Cure", 12, 120, "white")
-cura = Spell("Cura", 18, 200)
+cura = Spell("Cura", 18, 200, "white")
 
 # Instantiate People
 
@@ -37,18 +36,16 @@ while running:
         player.choose_magic()
         magic_choice = int(input("Choose magic:")) - 1 # wrap input in int
 
-        cost = player.get_spell_mp_cost(magic_choice)
         spell = player.magic[magic_choice]
         magic_dmg = spell.generate_damage()
         
-
         current_mp = player.get_mp() # get mp
 
         if spell.cost > current_mp:
             print(bcolors.FAIL + "\nNot enough MP\n" + bcolors.ENDC)
             continue
 
-        player.reduce_mp(cost) # reduce mp by cost
+        player.reduce_mp(spell.cost) # reduce mp by cost
         enemy.take_damage(magic_dmg) # enemy takes magic damage
         print(bcolors.OKBLUE + "\n" + spell.name + " deals", str(magic_dmg), "points of damage" + bcolors.ENDC)
 
