@@ -16,7 +16,7 @@ cura = Spell("Cura", 18, 200)
 # Instantiate People
 
 player = Person(460, 65, 60, 34, [fire, thunder, blizzard, meteor, cure, cura]) # instantiate player
-enemy = Person(1200, 65, 45, 25, [fire, thunder, blizzard, meteor, cure, cura]) # instantiate (creating object from a blueprint(enemy 
+enemy = Person(1200, 65, 45, 25, []) # instantiate (creating object from a blueprint(enemy 
 
 running = True # run the loop
 i = 0
@@ -36,19 +36,25 @@ while running:
     elif index == 1:
         player.choose_magic()
         magic_choice = int(input("Choose magic:")) - 1 # wrap input in int
+        
         magic_dmg = player.generate_spell_damage(magic_choice)
         spell = player.get_spell_name(magic_choice)
         cost = player.get_spell_mp_cost(magic_choice) # reduce magic points by the cost of the spell
-    
+
+        spell = player.magic[magic_choice]
+        magic_dmg = spell.generate_damage()
+        
+
+
         current_mp = player.get_mp() # get mp
 
-        if cost > current_mp:
+        if spell.cost > current_mp:
             print(bcolors.FAIL + "\nNot enough MP\n" + bcolors.ENDC)
             continue
 
         player.reduce_mp(cost) # reduce mp by cost
         enemy.take_damage(magic_dmg) # enemy takes magic damage
-        print(bcolors.OKBLUE + "\n" + spell + " deals", str(magic_dmg), "points of damage" + bcolors.ENDC)
+        print(bcolors.OKBLUE + "\n" + spell.name + " deals", str(magic_dmg), "points of damage" + bcolors.ENDC)
 
     enemy_choice = 1 # only attack
 
