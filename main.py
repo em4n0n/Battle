@@ -1,6 +1,6 @@
 from classes.game import Person, bcolors
 from classes.magic import Spell
-
+from classes.inventory import Item
 # Create Black Magic
 fire = Spell("Fire", 10, 100, "black")
 thunder = Spell("Thunder", 10, 100, "black")
