@@ -45,7 +45,7 @@ while running:
         print("You attacked for", dmg, "points of damage.")
     elif index == 1:
         player.choose_magic()
-        magic_choice = int(input("Choose magic:")) - 1 # wrap input in int
+        magic_choice = int(input("Choose magic: ")) - 1 # wrap input in int
 
         spell = player.magic[magic_choice]
         magic_dmg = spell.generate_damage()
@@ -64,7 +64,9 @@ while running:
         elif spell.type == "black":
             enemy.take_damage(magic_dmg) # enemy takes magic damage
             print(bcolors.OKBLUE + "\n" + spell.name + " deals", str(magic_dmg), "points of damage" + bcolors.ENDC)
-
+    elif index ==2:
+        player.choose_item()
+        item_choice = int(input("Choose item: ")) -1
     
     enemy_choice = 1 # only attack
 
