@@ -14,17 +14,19 @@ quake = Spell("Quake", 14, 140, "black")
 cure = Spell("Cure", 12, 120, "white")
 cura = Spell("Cura", 18, 200, "white")
 
+# create Items
 potion = Item("Potion", "potion", "Heals 50 HP", 50)
 hipotion = Item("Hi-Potion", "potion", "Heals 100 HP", 100)
 superpotion = Item("superpotion", "potion", "Heals 150 HP", 150)
 elixer = Item("Elixer", "elixer", "Fully restores HP/MP of one party member", 9999)
 hielixer = Item("MegaElixer", "elixer", "Fully restores party's HP/MP", 9999)
+
 grenade = Item("Grenade", "attack", "Deals 500 damage", 500)
 
 # Instantiate People
 
-player = Person(460, 65, 60, 34, [fire, thunder, blizzard, meteor, cure, cura]) # instantiate player
-enemy = Person(1200, 65, 45, 25, []) # instantiate (creating object from a blueprint(enemy 
+player = Person(460, 65, 60, 34, [fire, thunder, blizzard, meteor, cure, cura], []) # instantiate player
+enemy = Person(1200, 65, 45, 25, [], []) # instantiate (creating object from a blueprint(enemy 
 
 running = True # run the loop
 i = 0
