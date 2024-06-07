@@ -1,5 +1,4 @@
 import random
-from .magic import Spell
 import pprint
 
 class bcolors:
@@ -23,7 +22,7 @@ class Person:
         self.df = df
         self.magic = magic
         self.items = items
-        self.actions = ["Attack", "Magic"]
+        self.actions = ["Attack", "Magic", "Items"]
 
     def generate_damage(self):
         return random.randrange(self.atkl, self.atkh)
