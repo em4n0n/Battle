@@ -56,6 +56,8 @@ while running:
             print(bcolors.FAIL + "\nNot enough MP\n" + bcolors.ENDC)
             continue
 
+        player.reduce_mp(spell.cost)
+
         if spell.type == "white":
             player.heal(magic_dmg)
             print(bcolors.OKBLUE + "\n" + spell.name + " heals for", str(magic_dmg), "HP." + bcolors.ENDC)
@@ -63,7 +65,7 @@ while running:
             enemy.take_damage(magic_dmg) # enemy takes magic damage
             print(bcolors.OKBLUE + "\n" + spell.name + " deals", str(magic_dmg), "points of damage" + bcolors.ENDC)
 
-
+    
     enemy_choice = 1 # only attack
 
     enemy_dmg = enemy.generate_damage()
