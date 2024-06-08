@@ -23,9 +23,10 @@ hielixer = Item("MegaElixer", "elixer", "Fully restores party's HP/MP", 9999)
 
 grenade = Item("Grenade", "attack", "Deals 500 damage", 500)
 
+player_spells = [fire, thunder, blizzard, meteor, cure, cura]
 # Instantiate People
 
-player = Person(460, 65, 60, 34, [fire, thunder, blizzard, meteor, cure, cura], []) # instantiate player
+player = Person(460, 65, 60, 34, player_spells, []) # instantiate player
 enemy = Person(1200, 65, 45, 25, [], []) # instantiate (creating object from a blueprint(enemy 
 
 running = True # run the loop
