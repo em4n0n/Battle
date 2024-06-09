@@ -84,6 +84,7 @@ while running:
         elif item.type == "elixer":
             player.hp = player.maxhp
             player.mp = player.maxmp
+            print(bcolors.OKGREEN + "\n" + item.name + "fully restores HP/MP" + bcolors.ENDC )
             
     enemy_choice = 1 # only attack
 
