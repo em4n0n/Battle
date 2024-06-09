@@ -58,7 +58,7 @@ class Person:
         i = 1 # start index with 1
         print(bcolors.OKBLUE + bcolors.BOLD + "ACTION" + bcolors.ENDC)
         for item in self.actions:
-            print("    " + str(i) + ".", item) # concat with colon
+            print(str(i) + ".", item) # concat with colon
             i += 1 # increment i
     
     def choose_magic(self):
@@ -71,7 +71,14 @@ class Person:
     def choose_item(self):
         i = 1
 
-        print(bcolors.OKGREEN + bcolors.BOLD + "ITEMS:" + bcolors.ENDC)
+        print("\n" + bcolors.OKGREEN + bcolors.BOLD + "ITEMS:" + bcolors.ENDC)
         for item in self.items:
-            print("    " + str(i) + ".", item.name, ":", item.description, " (x5)")
+            print("    " + str(i) + ".", item["item"].name + ":", item["item"].description, " (x5)")
             i += 1
+
+        choice = int(input("Choose item: ")) - 1
+        if choice >= 0 and choice < len(self.items):
+            return self.items[choice]
+        else:
+            print("Invalid choice")
+            return None
