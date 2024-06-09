@@ -69,7 +69,10 @@ while running:
     elif index ==2:
         player.choose_item()
         item_choice = int(input("Choose item: ")) -1
-    
+
+        if item_choice == -1:
+            continue
+        
     enemy_choice = 1 # only attack
 
     enemy_dmg = enemy.generate_damage()
