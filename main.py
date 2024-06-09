@@ -24,7 +24,7 @@ hielixer = Item("MegaElixer", "elixer", "Fully restores party's HP/MP", 9999)
 grenade = Item("Grenade", "attack", "Deals 500 damage", 500)
 
 player_spells = [fire, thunder, blizzard, meteor, cure, cura]
-player_items = [potion, hipotion, superpotion, elixer, hielixer, grenade]
+player_items = [{"item": potion, "quantity": 5}]
 # Instantiate People
 
 player = Person(460, 65, 60, 34, player_spells, []) # instantiate player
@@ -88,7 +88,7 @@ while running:
         elif item.type == "attack":
             enemy.take_damage(item.prop)
             print(bcolors.FAIL + "\n" + item.name + " deals", str(item.prop), "points of damage" + bcolors.ENDC)
-            
+
 
     enemy_choice = 1 # only attack
 
