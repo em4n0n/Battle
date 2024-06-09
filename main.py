@@ -49,7 +49,7 @@ while running:
         player.choose_magic()
         magic_choice = int(input("Choose magic: ")) - 1 # wrap input in int
 
-        if magic_choice == -1:
+        if magic_choice == -1: # allows player to go back to menu
             continue
 
         spell = player.magic[magic_choice]
@@ -75,6 +75,11 @@ while running:
 
         if item_choice == -1:
             continue
+        
+        item = player.items[item_choice]
+        if item.type == "potion":
+            player.heal(item.prop)
+            print(bcolors.OKGREEN + "\n" + item.name + " heals for", str(item.prop), "HP" + bcolors.ENDC)
 
     enemy_choice = 1 # only attack
 
