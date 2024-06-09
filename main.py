@@ -85,6 +85,8 @@ while running:
             player.hp = player.maxhp
             player.mp = player.maxmp
             print(bcolors.OKGREEN + "\n" + item.name + "fully restores HP/MP" + bcolors.ENDC )
+        elif item.type == "attack":
+            enemy.take_damage(item.prop)
             
     enemy_choice = 1 # only attack
 
