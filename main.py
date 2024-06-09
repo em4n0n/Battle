@@ -49,6 +49,9 @@ while running:
         player.choose_magic()
         magic_choice = int(input("Choose magic: ")) - 1 # wrap input in int
 
+        if magic_choice == -1:
+            continue
+
         spell = player.magic[magic_choice]
         magic_dmg = spell.generate_damage()
         
@@ -72,7 +75,7 @@ while running:
 
         if item_choice == -1:
             continue
-        
+
     enemy_choice = 1 # only attack
 
     enemy_dmg = enemy.generate_damage()
