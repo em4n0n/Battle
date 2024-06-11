@@ -73,12 +73,5 @@ class Person:
 
         print("\n" + bcolors.OKGREEN + bcolors.BOLD + "ITEMS:" + bcolors.ENDC)
         for item in self.items:
-            print("    " + str(i) + ".", item["item"].name + ":", item["item"].description, " (x5)")
+            print("     " + str(i) + ".", item["item"].name + ":", item["item"].description, "x" + str(item["quantity"]) +")")
             i += 1
-
-        choice = int(input("Choose item: ")) - 1
-        if choice >= 0 and choice < len(self.items):
-            return self.items[choice]
-        else:
-            print("Invalid choice")
-            return None

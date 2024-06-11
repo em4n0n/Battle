@@ -78,7 +78,7 @@ while running:
         if item_choice == -1:
             continue
         
-        item = player.items[item_choice]
+        item = player.items["item"][item_choice]
 
         if item.type == "potion":
             player.heal(item.prop)
