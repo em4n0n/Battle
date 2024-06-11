@@ -1,6 +1,7 @@
 from classes.game import Person, bcolors
 from classes.magic import Spell
 from classes.inventory import Item
+import random
 
 
 # Create Black Magic
@@ -71,14 +72,14 @@ while running:
         elif spell.type == "black":
             enemy.take_damage(magic_dmg) # enemy takes magic damage
             print(bcolors.OKBLUE + "\n" + spell.name + " deals", str(magic_dmg), "points of damage" + bcolors.ENDC)
-    elif index ==2:
+    elif index == 2:
         player.choose_item()
-        item_choice = int(input("Choose item: ")) -1
+        item_choice = int(input("   Choose item: ")) -1
 
         if item_choice == -1:
             continue
         
-        item = player.items["item"][item_choice]
+        item = player.items[item_choice]["item"]
 
         if item.type == "potion":
             player.heal(item.prop)
