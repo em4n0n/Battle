@@ -3,6 +3,10 @@ from classes.magic import Spell
 from classes.inventory import Item
 import random
 
+print("\n\n")
+print("NAME                HP                                   MP")
+print("                     ________________________             __________ ")
+print("Valos :     460/460 |                        |     65/65  |         |")
 
 # Create Black Magic
 fire = Spell("Fire", 10, 100, "black")
