@@ -14,6 +14,7 @@ print("Valos :     460/460 |                        |     65/65  |         |")
 print("                     ________________________             __________ ")
 print("Valos :     460/460 |                        |     65/65  |         |")
 
+print("\n\n")
 # Create Black Magic
 fire = Spell("Fire", 10, 100, "black")
 thunder = Spell("Thunder", 10, 100, "black")
