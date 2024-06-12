@@ -6,7 +6,7 @@ import random
 print("\n\n")
 print("NAME                HP                                   MP")
 print("                     ________________________             __________ ")
-print("Valos :     460/460 |                        |     65/65  |         |")
+print(bcolors.BOLD + "Valos :     460/460 |████████                |     65/65  |█████████|")
 
 print("                     ________________________             __________ ")
 print("Valos :     460/460 |                        |     65/65  |         |")
