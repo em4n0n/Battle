@@ -44,11 +44,12 @@ player_items = [{"item": potion, "quantity": 15}, {"item": hipotion, "quantity":
                 {"item": hielixer, "quantity": 2}, {"item": grenade, "quantity": 5}]
 # Instantiate People
 
-player = Person("Valos", 460, 65, 60, 34, player_spells, player_items)
-player = Person("Valos", 460, 65, 60, 34, player_spells, player_items)
-player = Person("Valos", 460, 65, 60, 34, player_spells, player_items) # instantiate player
+player1 = Person("Valos", 460, 65, 60, 34, player_spells, player_items)
+player2 = Person("Kalos", 460, 65, 60, 34, player_spells, player_items)
+player3 = Person("Katos", 460, 65, 60, 34, player_spells, player_items) # instantiate player
 enemy = Person(1200, 65, 45, 25, [], []) # instantiate (creating object from a blueprint(enemy 
 
+players = [player1, player2, player3]
 running = True # run the loop
 i = 0
 
