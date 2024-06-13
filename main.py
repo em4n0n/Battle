@@ -7,7 +7,8 @@ print("\n\n")
 print("NAME                HP                                   MP")
 print("                     ________________________             __________ ")
 print(bcolors.BOLD + "Valos :     " +
-      "460/460 |" + bcolors.OKGREEN + "████████               " + bcolors.ENDC + "|     65/65  |█████████|")
+      "460/460 |" + bcolors.OKGREEN + "████████               " + bcolors.ENDC + "|     "+
+      "65/65  |" + bcolors.OKBLUE + "█████████|")
 
 print("                     ________________________             __________ ")
 print("Valos :     460/460 |                        |     65/65  |         |")
