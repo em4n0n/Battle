@@ -9,7 +9,7 @@ print("                     ________________________             __________ ")
 print(bcolors.BOLD + "Valos :     " +
       "210/460 |" + bcolors.OKGREEN + "████████               " + bcolors.ENDC + bcolors.BOLD
       + "|     "+
-      "65/65  |" + bcolors.OKBLUE + "█████████|")
+      "65/65  |" + bcolors.OKBLUE + "█████████|" + bcolors.ENDC + "|")
 
 print("                     ________________________             __________ ")
 print("Valos :     460/460 |                        |     65/65  |         |")
