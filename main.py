@@ -15,7 +15,7 @@ print("                     ________________________             __________ ")
 print("Valos :     460/460 |                        |     65/65  |         |")
 
 print("                     ________________________             __________ ")
-print("Valos :     460/460 |                        |     65/65  |         |")
+print("Kalos :     460/460 |                        |     65/65  |         |")
 
 print("\n\n")
 # Create Black Magic
@@ -68,7 +68,7 @@ while running:
     for player in players:
 
         player1.choose_action() # call the method
-        choice = input("Choose action:")
+        choice = input("    Choose action:")
         index = int(choice) - 1 # reduce the choice by 1 since index starts at 0
         
         if index == 0:
@@ -77,7 +77,7 @@ while running:
             print("You attacked for", dmg, "points of damage.")
         elif index == 1:
             player.choose_magic()
-            magic_choice = int(input("Choose magic: ")) - 1 # wrap input in int
+            magic_choice = int(input("    Choose magic: ")) - 1 # wrap input in int
 
             if magic_choice == -1: # allows player to go back to menu
                 continue
