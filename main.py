@@ -46,10 +46,11 @@ player_items = [{"item": potion, "quantity": 15}, {"item": hipotion, "quantity":
 
 player1 = Person("Valos:", 460, 65, 60, 34, player_spells, player_items)
 player2 = Person("Kalos:", 460, 65, 60, 34, player_spells, player_items)
-player3 = Person("Katos:", 460, 65, 60, 34, player_spells, player_items) # instantiate player
-enemy = Person(1200, 65, 45, 25, [], []) # instantiate (creating object from a blueprint(enemy 
+player3 = Person("David:", 460, 65, 60, 34, player_spells, player_items) # instantiate player
+enemy = Person("Magus", 1200, 65, 45, 25, [], []) # instantiate (creating object from a blueprint(enemy 
 
 players = [player1, player2, player3]
+
 running = True # run the loop
 i = 0
 
@@ -58,10 +59,14 @@ print(bcolors.FAIL + bcolors.BOLD + "AN ENEMY ATTACKS!" + bcolors.ENDC)
 while running:
     print("======================")
 
+    print("\n\n")
+    print("NAME")
     for player in players:
-        print("\n\n")
+        player.get_stats()
 
-        print("\n")
+    print("\n")
+    for player in players:
+
         player1.choose_action() # call the method
         choice = input("Choose action:")
         index = int(choice) - 1 # reduce the choice by 1 since index starts at 0
