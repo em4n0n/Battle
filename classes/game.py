@@ -57,21 +57,23 @@ class Person:
 
     def choose_action(self):
         i = 1 # start index with 1
-        print(bcolors.OKBLUE + bcolors.BOLD + "ACTION" + bcolors.ENDC)
+        print("\n" + bcolors.BOLD + self.name + bcolors.ENDC)
+        print(bcolors.OKBLUE + bcolors.BOLD + "ACTIONS" + bcolors.ENDC)
         for item in self.actions:
-            print(str(i) + ".", item) # concat with colon
+            print("    ", str(i) + ".", item)
             i += 1 # increment i
     
     def choose_magic(self):
         i = 1
-        print("\n" + bcolors.OKBLUE + bcolors.BOLD + "    MAGIC:" + bcolors.ENDC)
+
+        print("\n" + bcolors.OKBLUE + bcolors.BOLD + "MAGIC:" + bcolors.ENDC)
         for spell in self.magic:
-            print("     " + str(i) + ".", spell.name, "(Cost:", str(spell.cost)+")")
+            print("     " + str(i) + ".", spell.name, "(cost:", str(spell.cost) + ")")
             i += 1
 
     def choose_item(self):
         i = 1
-        print("\n" + bcolors.OKGREEN + bcolors.BOLD + "    ITEMS:" + bcolors.ENDC)
+        print("\n" + bcolors.OKGREEN + bcolors.BOLD + "ITEMS:" + bcolors.ENDC)
         for item in self.items:
             print("     " + str(i) + ".", item["item"].name + ":", item["item"].description, " (x" + str(item["quantity"]) + ")" )
             i += 1
@@ -79,6 +81,6 @@ class Person:
     def get_stats(self):
         print("                     ________________________             __________ ")
         print(bcolors.BOLD + self.name + "    " +
-            self.hp + "/" + self.maxhp + " |" +  bcolors.OKGREEN + "████████               " + bcolors.ENDC + bcolors.BOLD
+            str(self.hp) + "/" + str(self.maxhp) + " |" +  bcolors.OKGREEN + "████████               " + bcolors.ENDC + bcolors.BOLD
             + "|     "+
-            self.mp + "/" + self.maxmp + " |" + bcolors.OKBLUE + "█████████|" + bcolors.ENDC + "|")
+            str(self.mp) + "/" + str(self.maxmp) + " |" + bcolors.OKBLUE + "█████████|" + bcolors.ENDC + "|")
