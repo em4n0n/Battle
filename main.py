@@ -60,6 +60,8 @@ while running:
 
     for player in players:
         print("\n\n")
+
+        print("\n")
         player1.choose_action() # call the method
         choice = input("Choose action:")
         index = int(choice) - 1 # reduce the choice by 1 since index starts at 0
