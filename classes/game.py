@@ -79,6 +79,9 @@ class Person:
             i += 1
     
     def get_stats(self):
+        bar = ""
+        bar_ticks = (self.hp / self.maxhp) * 100 / 4
+
         print("                     ________________________             __________ ")
         print(bcolors.BOLD + self.name + "    " +
             str(self.hp) + "/" + str(self.maxhp) + " |" +  bcolors.OKGREEN + "████████               " + bcolors.ENDC + bcolors.BOLD
