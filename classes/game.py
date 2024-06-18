@@ -84,6 +84,7 @@ class Person:
 
         mp_bar = ""
         mp_ticks = (self.mp / self.maxmp) * 100/10
+
         while bar_ticks > 0:
             hp_bar += " "
             bar_ticks -= 1
@@ -91,6 +92,11 @@ class Person:
         while len(hp_bar) < 25:
             hp_bar += " "
 
+        while mp_ticks > 0:
+            hp_bar += "█"
+            mp_ticks -= 1
+        
+        
         hp_string = str(self.hp) + "/" + str(self.maxhp)
         current_hp = ""
 
