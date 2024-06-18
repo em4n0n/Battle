@@ -19,15 +19,15 @@ print("Kalos :     460/460 |                        |     65/65  |         |")
 
 print("\n\n")
 # Create Black Magic
-fire = Spell("Fire", 10, 100, "black")
-thunder = Spell("Thunder", 10, 100, "black")
-blizzard = Spell("Blizzard", 10, 100, "black")
-meteor = Spell("Meteor", 20, 200, "black")
+fire = Spell("Fire", 25, 100, "black")
+thunder = Spell("Thunder", 25, 100, "black")
+blizzard = Spell("Blizzard", 25, 100, "black")
+meteor = Spell("Meteor", 40, 200, "black")
 quake = Spell("Quake", 14, 140, "black")
 
 # Create White Magic
-cure = Spell("Cure", 12, 120, "white")
-cura = Spell("Cura", 18, 200, "white")
+cure = Spell("Cure", 25, 120, "white")
+cura = Spell("Cura", 32, 200, "white")
 
 # create Items
 potion = Item("Potion", "potion", "Heals 50 HP", 50)
