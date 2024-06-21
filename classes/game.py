@@ -103,9 +103,9 @@ class Person:
         else:
             current_hp = hp_string
 
-        print("                     ________________________             __________ ")
-        print(bcolors.BOLD + self.name + "    " +
-            current_hp + "|" + bcolors.OKGREEN +  hp_bar + bcolors.ENDC + "|")
+        print("                     __________________________________________________ ")
+        print(bcolors.BOLD + self.name + "   " +
+            current_hp + "|" + bcolors.FAIL +  hp_bar + bcolors.ENDC + "|")
 
     def get_stats(self):
         hp_bar = ""
