@@ -47,7 +47,7 @@ player_items = [{"item": potion, "quantity": 15}, {"item": hipotion, "quantity":
 player1 = Person("Valos:", 3260, 132, 300, 34, player_spells, player_items)
 player2 = Person("Kalos:", 4160, 188, 311, 34, player_spells, player_items)
 player3 = Person("David:", 1120, 174, 288, 34, player_spells, player_items) # instantiate player
-enemy = Person("Magus", 1120, 701, 525, 25, [], []) # instantiate (creating object from a blueprint(enemy 
+enemy = Person("Magus", 11120, 701, 525, 25, [], []) # instantiate (creating object from a blueprint(enemy 
 
 players = [player1, player2, player3]
 
@@ -67,7 +67,7 @@ while running:
     print("\n")
 
     enemy.get_enemy_stats()
-    
+
     for player in players:
 
         player1.choose_action() # call the method
