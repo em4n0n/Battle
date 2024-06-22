@@ -38,6 +38,7 @@ enemy2 = Person("Magus", 18200, 701, 525, 25, [], []) # instantiate (creating ob
 enemy3 = Person("Imp", 1250, 130, 560, 325, [], [])
 
 players = [player1, player2, player3]
+enemies = [enemy1, enemy2, enemy3]
 
 running = True # run the loop
 i = 0
@@ -54,7 +55,8 @@ while running:
 
     print("\n")
 
-    enemy.get_enemy_stats()
+    for enemy in enemies:
+        enemy.get_enemy_stats()
 
     for player in players:
 
@@ -64,6 +66,7 @@ while running:
         
         if index == 0:
             dmg = player1.generate_damage() # randrange of atkl + atkh
+            player.choose_target(enemies) 
             enemy.take_damage(dmg) # take damage method
             print("You attacked for", dmg, "points of damage.")
         elif index == 1:
