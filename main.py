@@ -66,9 +66,9 @@ while running:
         
         if index == 0:
             dmg = player1.generate_damage() # randrange of atkl + atkh
-            player.choose_target(enemies) 
-            enemy.take_damage(dmg) # take damage method
-            print("You attacked for", dmg, "points of damage.")
+            enemy = player.choose_target(enemies)
+            enemies[enemy].take_damage(dmg)
+            print("You attacked " + enemies[enemy].name + " for", dmg, "points of damage.")
         elif index == 1:
             player.choose_magic()
             magic_choice = int(input("    Choose magic: ")) - 1 # wrap input in int
@@ -91,8 +91,12 @@ while running:
                 player.heal(magic_dmg)
                 print(bcolors.OKBLUE + "\n" + spell.name + " heals for", str(magic_dmg), "HP." + bcolors.ENDC)
             elif spell.type == "black":
-                enemy.take_damage(magic_dmg) # enemy takes magic damage
-                print(bcolors.OKBLUE + "\n" + spell.name + " deals", str(magic_dmg), "points of damage" + bcolors.ENDC)
+
+                enemy = player.choose_target(enemies)
+
+                enemies[enemy].take_damage(magic_dmg)
+
+                print(bcolors.OKBLUE + "\n" + spell.name + " deals", str(magic_dmg), "points of damage to " + enemies[enemy].name + bcolors.ENDC)
         elif index == 2:
             player.choose_item()
             item_choice = int(input("   Choose item: ")) -1
@@ -122,8 +126,10 @@ while running:
                     player.mp = player.maxmp
                 print(bcolors.OKGREEN + "\n" + item.name + "fully restores HP/MP" + bcolors.ENDC )
             elif item.type == "attack":
-                enemy.take_damage(item.prop)
-                print(bcolors.FAIL + "\n" + item.name + " deals", str(item.prop), "points of damage" + bcolors.ENDC)
+
+                enemy = player.choose_target(enemies)
+                enemies[enemy].take_damage(item.prop)
+                print(bcolors.FAIL + "\n" + item.name + " deals", str(item.prop), "points of damage to " + enemies[enemy].name + bcolors.ENDC)
 
 
     enemy_choice = 1 # only attack
