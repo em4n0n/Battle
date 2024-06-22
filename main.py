@@ -3,21 +3,6 @@ from classes.magic import Spell
 from classes.inventory import Item
 import random
 
-print("\n\n")
-print("NAME                HP                                   MP")
-print("                     ________________________             __________ ")
-print(bcolors.BOLD + "Valos :     " +
-      "210/460 |" + bcolors.OKGREEN + "████████               " + bcolors.ENDC + bcolors.BOLD
-      + "|     "+
-      "65/65  |" + bcolors.OKBLUE + "█████████|" + bcolors.ENDC + "|")
-
-print("                     ________________________             __________ ")
-print("Valos :     460/460 |                        |     65/65  |         |")
-
-print("                     ________________________             __________ ")
-print("Kalos :     460/460 |                        |     65/65  |         |")
-
-print("\n\n")
 # Create Black Magic
 fire = Spell("Fire", 25, 100, "black")
 thunder = Spell("Thunder", 25, 100, "black")
@@ -32,7 +17,7 @@ cura = Spell("Cura", 32, 200, "white")
 # create Items
 potion = Item("Potion", "potion", "Heals 50 HP", 50)
 hipotion = Item("Hi-Potion", "potion", "Heals 100 HP", 100)
-superpotion = Item("superpotion", "potion", "Heals 150 HP", 150)
+superpotion = Item("Super Potion", "potion", "Heals 150 HP", 150)
 elixer = Item("Elixer", "elixer", "Fully restores HP/MP of one party member", 9999)
 hielixer = Item("MegaElixer", "elixer", "Fully restores party's HP/MP", 9999)
 
@@ -47,7 +32,10 @@ player_items = [{"item": potion, "quantity": 15}, {"item": hipotion, "quantity":
 player1 = Person("Valos:", 3260, 132, 300, 34, player_spells, player_items)
 player2 = Person("Kalos:", 4160, 188, 311, 34, player_spells, player_items)
 player3 = Person("David:", 1120, 174, 288, 34, player_spells, player_items) # instantiate player
-enemy = Person("Magus", 11120, 701, 525, 25, [], []) # instantiate (creating object from a blueprint(enemy 
+
+enemy1 = Person("Imp", 1250, 130, 560, 325, [], [])
+enemy2 = Person("Magus", 18200, 701, 525, 25, [], []) # instantiate (creating object from a blueprint(enemy 
+enemy3 = Person("Imp", 1250, 130, 560, 325, [], [])
 
 players = [player1, player2, player3]
 
@@ -136,14 +124,11 @@ while running:
 
 
     enemy_choice = 1 # only attack
-    target = random.randrange(0, 2)
+    target = random.randrange(0, 3)
     enemy_dmg = enemy.generate_damage()
 
-    player1.take_damage(enemy_dmg)
+    players[target].take_damage(enemy_dmg)
     print("Enemy attacks for", enemy_dmg)
-
-    print("____________________________")
-    print("Enemy HP:", bcolors.FAIL + str(enemy.get_hp()) + "/" + str(enemy.get_max_hp()) + bcolors.ENDC + "\n")
 
     if enemy.get_hp() == 0:
         print(bcolors.OKGREEN + "You Win!" + bcolors.ENDC)
