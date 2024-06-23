@@ -140,10 +140,15 @@ while running:
     print("Enemy attacks for", enemy_dmg)
 
     defeated_enemmies = 0
+    defeated_players = 0
 
     for enemy in enemies:
         if enemy.get_hp() == 0:
             defeated_enemmies +=1
+    
+    for player in players:
+        if player.get_hp() == 0:
+            defeated_players += 1
 
     if defeated_enemmies == 2:
         print(bcolors.OKGREEN + "You win!" + bcolors.ENDC)
