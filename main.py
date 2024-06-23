@@ -145,9 +145,8 @@ while running:
         if enemy.get_hp() == 0:
             defeated_enemmies +=1
 
-
-    if enemy.get_hp() == 0:
-        print(bcolors.OKGREEN + "You Win!" + bcolors.ENDC)
+    if defeated_enemmies == 2:
+        print(bcolors.OKGREEN + "You win!" + bcolors.ENDC)
         running = False
     elif player.get_hp() == 0:
         print(bcolors.FAIL + "Your enemy has defeated you!" + bcolors.ENDC)
