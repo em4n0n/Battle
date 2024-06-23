@@ -33,9 +33,9 @@ player1 = Person("Valos:", 3260, 132, 300, 34, player_spells, player_items)
 player2 = Person("Kalos:", 4160, 188, 311, 34, player_spells, player_items)
 player3 = Person("David:", 1120, 174, 288, 34, player_spells, player_items) # instantiate player
 
-enemy1 = Person("Imp", 1250, 130, 560, 325, [], [])
+enemy1 = Person("Imp  ", 1250, 130, 560, 325, [], [])
 enemy2 = Person("Magus", 18200, 701, 525, 25, [], []) # instantiate (creating object from a blueprint(enemy 
-enemy3 = Person("Imp", 1250, 130, 560, 325, [], [])
+enemy3 = Person("Imp  ", 1250, 130, 560, 325, [], [])
 
 players = [player1, player2, player3]
 enemies = [enemy1, enemy2, enemy3]
@@ -134,10 +134,17 @@ while running:
 
     enemy_choice = 1 # only attack
     target = random.randrange(0, 3)
-    enemy_dmg = enemy.generate_damage()
+    enemy_dmg = enemies[0].generate_damage()
 
     players[target].take_damage(enemy_dmg)
     print("Enemy attacks for", enemy_dmg)
+
+    defeated_enemmies = 0
+
+    for enemy in enemies:
+        if enemy.get_hp() == 0:
+            defeated_enemmies +=1
+
 
     if enemy.get_hp() == 0:
         print(bcolors.OKGREEN + "You Win!" + bcolors.ENDC)
