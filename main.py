@@ -67,8 +67,15 @@ while running:
         if index == 0:
             dmg = player1.generate_damage() # randrange of atkl + atkh
             enemy = player.choose_target(enemies)
+
             enemies[enemy].take_damage(dmg)
             print("You attacked " + enemies[enemy].name + " for", dmg, "points of damage.")
+
+        if enemies[enemy].get_hp() == 0:
+            print(enemies[enemy].name + " has died.")
+            del enemies[enemy]
+
+
         elif index == 1:
             player.choose_magic()
             magic_choice = int(input("    Choose magic: ")) - 1 # wrap input in int
@@ -153,6 +160,7 @@ while running:
     if defeated_enemmies == 2:
         print(bcolors.OKGREEN + "You win!" + bcolors.ENDC)
         running = False
-    elif player.get_hp() == 0:
-        print(bcolors.FAIL + "Your enemy has defeated you!" + bcolors.ENDC)
+
+    elif defeated_players == 2:
+        print(bcolors.FAIL + "Your enemies have defeated you!" + bcolors.ENDC)
         running = False
