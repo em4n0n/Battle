@@ -72,7 +72,7 @@ while running:
             print("You attacked " + enemies[enemy].name.replace(" ", "") + " for", dmg, "points of damage.")
 
         if enemies[enemy].get_hp() == 0:
-            print(enemies[enemy].name + " has died.")
+            print(enemies[enemy].name.replace(" ", "") + " has died.")
             del enemies[enemy]
 
 
@@ -103,7 +103,7 @@ while running:
 
                 enemies[enemy].take_damage(magic_dmg)
 
-                print(bcolors.OKBLUE + "\n" + spell.name + " deals", str(magic_dmg), "points of damage to " + enemies[enemy].name.replace(" ", "") + bcolors.ENDC)
+                print(bcolors.OKBLUE + "\n" + spell.name.replace(" ", "") + " deals", str(magic_dmg), "points of damage to " + enemies[enemy].name.replace(" ", "") + bcolors.ENDC)
 
             if enemies[enemy].get_hp() == 0:
                 print(enemies[enemy].name + " has died.")
