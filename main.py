@@ -24,6 +24,7 @@ hielixer = Item("MegaElixer", "elixer", "Fully restores party's HP/MP", 9999)
 grenade = Item("Grenade", "attack", "Deals 500 damage", 500)
 
 player_spells = [fire, thunder, blizzard, meteor, cure, cura]
+enemy_spells = [fire, meteor, cure]
 player_items = [{"item": potion, "quantity": 15}, {"item": hipotion, "quantity": 5},
                 {"item": superpotion, "quantity": 5}, {"item": elixer, "quantity": 5},
                 {"item": hielixer, "quantity": 2}, {"item": grenade, "quantity": 5}]
@@ -33,9 +34,9 @@ player1 = Person("Valos:", 3260, 132, 300, 34, player_spells, player_items)
 player2 = Person("Kalos:", 4160, 188, 311, 34, player_spells, player_items)
 player3 = Person("David:", 1120, 174, 288, 34, player_spells, player_items) # instantiate player
 
-enemy1 = Person("Imp  ", 1250, 130, 560, 325, [], [])
-enemy2 = Person("Magus", 18200, 701, 525, 25, [], []) # instantiate (creating object from a blueprint(enemy 
-enemy3 = Person("Imp  ", 1250, 130, 560, 325, [], [])
+enemy1 = Person("Imp  ", 1250, 130, 560, 325, [enemy_spells], [])
+enemy2 = Person("Magus", 18200, 701, 525, 25, [enemy_spells], []) # instantiate (creating object from a blueprint(enemy 
+enemy3 = Person("Imp  ", 1250, 130, 560, 325, [enemy_spells], [])
 
 players = [player1, player2, player3]
 enemies = [enemy1, enemy2, enemy3]
@@ -174,7 +175,7 @@ while running:
         enemy_choice = random.randrange(0, 3)
 
         if enemy_choice == 0:
-            #Chose attack
+            #Choose attack
             target = random.randrange(0, 3)
             enemy_dmg = enemies[0].generate_damage()
 
