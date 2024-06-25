@@ -183,4 +183,7 @@ while running:
 
         elif enemy_choice == 1:
             magic_choice = random.randrange(0, len(enemy.magic))
+            magic_dmg = enemy.magic[magic_choice].generate_damage()
+
+            
     
