@@ -182,8 +182,8 @@ while running:
             print(enemy.name.replace(" ", "")+ " attacks " + players[target].name.replace(" ", "") + " for", enemy_dmg)
 
         elif enemy_choice == 1:
-            magic_choice = random.randrange(0, len(enemy.magic))
-            magic_dmg = enemy.magic[magic_choice].generate_damage()
+            spell, magic_dmg = enemy.choose_enemy_spell()
+            print("Enemy chose", spell, "damage is", magic_dmg)
 
             
     
