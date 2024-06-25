@@ -174,10 +174,13 @@ while running:
         enemy_choice = random.randrange(0, 3)
 
         if enemy_choice == 0:
+            #Chose attack
             target = random.randrange(0, 3)
             enemy_dmg = enemies[0].generate_damage()
 
             players[target].take_damage(enemy_dmg)
             print(enemy.name.replace(" ", "")+ " attacks " + players[target].name.replace(" ", "") + " for", enemy_dmg)
 
+        elif enemy_choice == 1:
+            magic_choice = random.randrange(0, len(enemy.magic))
     
