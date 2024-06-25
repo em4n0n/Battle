@@ -147,16 +147,7 @@ while running:
                     print(enemies[enemy].name.replace(" ", "") + " has died.")
                     del enemies[enemy]
 
-    for enemy in enemies:
-        enemy_choice = random.randrange(0, 3)
-
-        if enemy_choice == 0:
-            target = random.randrange(0, 3)
-            enemy_dmg = enemies[0].generate_damage()
-
-            players[target].take_damage(enemy_dmg)
-            print(enemy.name.replace(" ", "")+ " attacks " + players[target].name.replace(" ", "") + " for", enemy_dmg)
-
+    # Check is battle is over
     defeated_enemmies = 0
     defeated_players = 0
 
@@ -168,10 +159,25 @@ while running:
         if player.get_hp() == 0:
             defeated_players += 1
 
+    # Check if player won
     if defeated_enemmies == 2:
         print(bcolors.OKGREEN + "You win!" + bcolors.ENDC)
         running = False
 
+    # Check is enemy won
     elif defeated_players == 2:
         print(bcolors.FAIL + "Your enemies have defeated you!" + bcolors.ENDC)
         running = False
+    
+    # Enemy attack phase
+    for enemy in enemies:
+        enemy_choice = random.randrange(0, 3)
+
+        if enemy_choice == 0:
+            target = random.randrange(0, 3)
+            enemy_dmg = enemies[0].generate_damage()
+
+            players[target].take_damage(enemy_dmg)
+            print(enemy.name.replace(" ", "")+ " attacks " + players[target].name.replace(" ", "") + " for", enemy_dmg)
+
+    
