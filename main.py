@@ -147,12 +147,15 @@ while running:
                     print(enemies[enemy].name.replace(" ", "") + " has died.")
                     del enemies[enemy]
 
-    enemy_choice = 1 # only attack
-    target = random.randrange(0, 3)
-    enemy_dmg = enemies[0].generate_damage()
+    for enemy in enemies:
+        enemy_choice = random.randrange(0, 3)
 
-    players[target].take_damage(enemy_dmg)
-    print("Enemy attacks for", enemy_dmg)
+        if enemy_choice == 0:
+            target = random.randrange(0, 3)
+            enemy_dmg = enemies[0].generate_damage()
+
+            players[target].take_damage(enemy_dmg)
+            print(enemy.name.replace(" ", "")+ " attacks " + players[target].name.replace(" ", "") + " for", enemy_dmg)
 
     defeated_enemmies = 0
     defeated_players = 0
