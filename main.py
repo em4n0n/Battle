@@ -191,9 +191,9 @@ while running:
                 print(bcolors.OKBLUE + "\n" + spell.name + " heals " + enemy.name + " for", str(magic_dmg), "HP." + bcolors.ENDC)
             elif spell.type == "black":
 
-                enemy = player.choose_target(enemies)
+                target = random.randrange(0, 3)
 
-                enemies[enemy].take_damage(magic_dmg)
+                players[target].take_damage(magic_dmg)
 
                 print(bcolors.OKBLUE + "\n" + spell.name.replace(" ", "") + " deals", str(magic_dmg), "points of damage to " + enemies[enemy].name.replace(" ", "") + bcolors.ENDC)
 
