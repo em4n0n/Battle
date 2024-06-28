@@ -170,9 +170,10 @@ while running:
         print(bcolors.FAIL + "Your enemies have defeated you!" + bcolors.ENDC)
         running = False
     
+    print("\n")
     # Enemy attack phase
     for enemy in enemies:
-        enemy_choice = random.randrange(0, 3)
+        enemy_choice = random.randrange(0, 2)
 
         if enemy_choice == 0:
             #Choose attack
