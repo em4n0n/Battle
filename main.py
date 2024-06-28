@@ -189,7 +189,7 @@ while running:
 
             if spell.type == "white":
                 enemy.heal(magic_dmg)
-                print(bcolors.OKBLUE + "\n" + spell.name + " heals " + enemy.name + " for", str(magic_dmg), "HP." + bcolors.ENDC)
+                print(bcolors.OKBLUE + spell.name + " heals " + enemy.name + " for", str(magic_dmg), "HP." + bcolors.ENDC)
             elif spell.type == "black":
 
                 target = random.randrange(0, 3)
