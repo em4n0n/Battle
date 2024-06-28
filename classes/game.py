@@ -56,8 +56,8 @@ class Person:
 
     def choose_action(self):
         i = 1 # start index with 1
-        print("\n" + "    " +bcolors.BOLD + self.name + bcolors.ENDC)
-        print(bcolors.OKBLUE + bcolors.BOLD + "    ACTIONS" + bcolors.ENDC)
+        print("\n" + "    " + bcolors.BOLD + self.name + bcolors.ENDC)
+        print(bcolors.OKBLUE + bcolors.BOLD + "    ACTIONS:" + bcolors.ENDC)
         for item in self.actions:
             print("        " + str(i) + ".", item)
             i += 1 # increment i
@@ -72,6 +72,7 @@ class Person:
 
     def choose_item(self):
         i = 1
+
         print("\n" + bcolors.OKGREEN + bcolors.BOLD + "    ITEMS:" + bcolors.ENDC)
         for item in self.items:
             print("         " + str(i) + ".", item["item"].name + ":", item["item"].description, " (x" + str(item["quantity"]) + ")" )
@@ -79,6 +80,7 @@ class Person:
     
     def choose_target(self, enemies):
         i = 1
+
         print("\n" + bcolors.FAIL + bcolors.BOLD + "    TARGET" + bcolors.ENDC)
         for enemy in enemies:
             if enemy.get_hp() != 0:
@@ -114,14 +116,14 @@ class Person:
 
         print("                     __________________________________________________ ")
         print(bcolors.BOLD + self.name + "   " +
-            current_hp + "|" + bcolors.FAIL +  hp_bar + bcolors.ENDC + "|")
+            current_hp + " |" + bcolors.FAIL +  hp_bar + bcolors.ENDC + "|")
 
     def get_stats(self):
         hp_bar = ""
         bar_ticks = (self.hp / self.maxhp) * 100 / 4
 
         mp_bar = ""
-        mp_ticks = (self.mp / self.maxmp) * 100/10
+        mp_ticks = (self.mp / self.maxmp) * 100 / 10
 
         while bar_ticks > 0:
             hp_bar += "█"
@@ -147,7 +149,7 @@ class Person:
                 current_hp += " "
                 decreased -= 1
 
-                current_hp += hp_string
+            current_hp += hp_string
         else:
             current_hp = hp_string
 
@@ -162,26 +164,14 @@ class Person:
                 decreased -= 1
 
             current_mp += mp_string
-        else:
-            current_mp = hp_string
 
-        mp_string = str(self.mp) + "/" + str(self.maxmp)
-        current_mp = ""
-
-        if len(mp_string) < 7:
-            decreased = 7 - len(mp_string)
-            while decreased > 0:
-                current_mp += " "
-                decreased -= 1
-
-                current_mp += mp_string
         else:
             current_mp = mp_string
 
         print("                     ________________________             __________ ")
         print(bcolors.BOLD + self.name + "    " +
             current_hp + "|" + bcolors.OKGREEN +  hp_bar + bcolors.ENDC + "|     " +
-            current_mp + "|" + str(self.maxmp) + " |" + bcolors.OKBLUE + mp_bar + bcolors.ENDC + "|")
+            current_mp + " |" + bcolors.OKBLUE + mp_bar + bcolors.ENDC + "|")
     
     def choose_enemy_spell(self):
         magic_choice = random.randrange(0, len(self.magic))
