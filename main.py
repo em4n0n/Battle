@@ -13,6 +13,7 @@ quake = Spell("Quake", 14, 140, "black")
 # Create White Magic
 cure = Spell("Cure", 25, 120, "white")
 cura = Spell("Cura", 32, 200, "white")
+curaga = Spell("Curaga", 50, 6000, "white")
 
 # create Items
 potion = Item("Potion", "potion", "Heals 50 HP", 50)
