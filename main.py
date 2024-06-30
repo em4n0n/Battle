@@ -3,6 +3,7 @@ from classes.magic import Spell
 from classes.inventory import Item
 import random
 
+
 # Create Black Magic
 fire = Spell("Fire", 25, 100, "black")
 thunder = Spell("Thunder", 25, 100, "black")
@@ -14,6 +15,7 @@ quake = Spell("Quake", 14, 140, "black")
 cure = Spell("Cure", 25, 120, "white")
 cura = Spell("Cura", 32, 200, "white")
 curaga = Spell("Curaga", 50, 6000, "white")
+
 
 # create Items
 potion = Item("Potion", "potion", "Heals 50 HP", 50)
