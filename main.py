@@ -43,6 +43,7 @@ enemy1 = Person("Imp  ", 1250, 130, 560, 325, enemy_spells, [])
 enemy2 = Person("Magus", 18200, 701, 525, 25, enemy_spells, []) # instantiate (creating object from a blueprint(enemy 
 enemy3 = Person("Imp  ", 1250, 130, 560, 325, enemy_spells, [])
 
+
 players = [player1, player2, player3]
 enemies = [enemy1, enemy2, enemy3]
 
@@ -66,8 +67,8 @@ while running:
 
     for player in players:
 
-        player1.choose_action() # call the method
-        choice = input("    Choose action:")
+        player.choose_action() # call the method
+        choice = input("    Choose action: ")
         index = int(choice) - 1 # reduce the choice by 1 since index starts at 0
         
         if index == 0:
