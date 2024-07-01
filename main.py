@@ -201,10 +201,10 @@ while running:
 
                 players[target].take_damage(magic_dmg)
 
-                print(bcolors.OKBLUE + "\n" + spell.name.replace(" ", "") + "'s " + spell.name + "deals", str(magic_dmg), "points of damage to " + players[target].name.replace(" ", "") + bcolors.ENDC)
+                print(bcolors.OKBLUE + "\n" + enemy.name.replace(" ", "") + "'s " + spell.name + "deals", str(magic_dmg), "points of damage to " + players[target].name.replace(" ", "") + bcolors.ENDC)
 
-            if enemies[enemy].get_hp() == 0:
-                print(enemies[enemy].name + " has died.")
+            if players[target].get_hp() == 0:
+                print(players[target].replace + " has died.")
                 del players[player]
             #print("Enemy chose", spell, "damage is", magic_dmg)
 
