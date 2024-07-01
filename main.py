@@ -165,12 +165,12 @@ while running:
         if player.get_hp() == 0:
             defeated_players += 1
 
-    # Check if player won
+    # Check if Player won
     if defeated_enemmies == 2:
         print(bcolors.OKGREEN + "You win!" + bcolors.ENDC)
         running = False
 
-    # Check is enemy won
+    # Check if Enemy won
     elif defeated_players == 2:
         print(bcolors.FAIL + "Your enemies have defeated you!" + bcolors.ENDC)
         running = False
@@ -183,7 +183,7 @@ while running:
         if enemy_choice == 0:
             #Choose attack
             target = random.randrange(0, 3)
-            enemy_dmg = enemies[0].generate_damage()
+            enemy_dmg = enemy.generate_damage()
 
             players[target].take_damage(enemy_dmg)
             print(enemy.name.replace(" ", "")+ " attacks " + players[target].name.replace(" ", "") + " for", enemy_dmg)
