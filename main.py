@@ -82,7 +82,6 @@ while running:
             print(enemies[enemy].name.replace(" ", "") + " has died.")
             del enemies[enemy]
 
-
         elif index == 1:
             player.choose_magic()
             magic_choice = int(input("    Choose magic: ")) - 1 # wrap input in int
@@ -110,10 +109,10 @@ while running:
 
                 enemies[enemy].take_damage(magic_dmg)
 
-                print(bcolors.OKBLUE + "\n" + spell.name.replace(" ", "") + " deals", str(magic_dmg), "points of damage to " + enemies[enemy].name.replace(" ", "") + bcolors.ENDC)
+                print(bcolors.OKBLUE + "\n" + spell.name + " deals", str(magic_dmg), "points of damage to " + enemies[enemy].name.replace(" ", "") + bcolors.ENDC)
 
             if enemies[enemy].get_hp() == 0:
-                print(enemies[enemy].name + " has died.")
+                print(enemies[enemy].name.replace(" ", "") + " has died.")
                 del enemies[enemy]
 
         elif index == 2:
