@@ -20,26 +20,28 @@ curaga = Spell("Curaga", 50, 6000, "white")
 # create Items
 potion = Item("Potion", "potion", "Heals 50 HP", 50)
 hipotion = Item("Hi-Potion", "potion", "Heals 100 HP", 100)
-superpotion = Item("Super Potion", "potion", "Heals 150 HP", 150)
+superpotion = Item("Super Potion", "potion", "Heals 150 HP", 1000)
 elixer = Item("Elixer", "elixer", "Fully restores HP/MP of one party member", 9999)
 hielixer = Item("MegaElixer", "elixer", "Fully restores party's HP/MP", 9999)
 
 grenade = Item("Grenade", "attack", "Deals 500 damage", 500)
 
+
 player_spells = [fire, thunder, blizzard, meteor, cure, cura]
-enemy_spells = [fire, meteor, cure]
+enemy_spells = [fire, meteor, curaga]
 player_items = [{"item": potion, "quantity": 15}, {"item": hipotion, "quantity": 5},
                 {"item": superpotion, "quantity": 5}, {"item": elixer, "quantity": 5},
                 {"item": hielixer, "quantity": 2}, {"item": grenade, "quantity": 5}]
-# Instantiate People
 
+
+# Instantiate People
 player1 = Person("Valos:", 3260, 132, 300, 34, player_spells, player_items)
 player2 = Person("Kalos:", 4160, 188, 311, 34, player_spells, player_items)
 player3 = Person("David:", 1120, 174, 288, 34, player_spells, player_items) # instantiate player
 
-enemy1 = Person("Imp  ", 1250, 130, 560, 325, [enemy_spells], [])
-enemy2 = Person("Magus", 18200, 701, 525, 25, [enemy_spells], []) # instantiate (creating object from a blueprint(enemy 
-enemy3 = Person("Imp  ", 1250, 130, 560, 325, [enemy_spells], [])
+enemy1 = Person("Imp  ", 1250, 130, 560, 325, enemy_spells, [])
+enemy2 = Person("Magus", 18200, 701, 525, 25, enemy_spells, []) # instantiate (creating object from a blueprint(enemy 
+enemy3 = Person("Imp  ", 1250, 130, 560, 325, enemy_spells, [])
 
 players = [player1, player2, player3]
 enemies = [enemy1, enemy2, enemy3]
